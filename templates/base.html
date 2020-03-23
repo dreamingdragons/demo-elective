@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+{% load pwa %}
+{% load static %}
+<head>
+	<title>Elective</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+
+<!-- web app  -->
+	<link rel="manifest" href="{% static 'manifest.json' %}">  
+	<link rel="apple-touch-icon" href="{% static 'images/hello-icon-152.png' %}">   
+	<meta name="theme-color" content="white"/>  
+	<meta name="apple-mobile-web-app-capable" content="yes">  
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+	<meta name="apple-mobile-web-app-title" content="Hello World"> 
+	<meta name="msapplication-TileImage" content="{% static 'images/hello-icon-144.png' %}">  
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<script type="text/javascript">
+    // Initialize the service worker
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/serviceworker.js', {
+            scope: '.' // <--- THIS BIT IS REQUIRED
+        }).then(function (registration) {
+            // Registration was successful
+            console.log('django-progressive-web-app: ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+            // registration failed :(
+            console.log('django-progressive-web-app: ServiceWorker registration failed: ', err);
+        });
+    }
+</script>
+<body>
+	{% block content %}
+	{% endblock %}
+</body>
+</html>

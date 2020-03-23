@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-6 col-lg-4 p-4">
+			<div class="card ">
+				<div class="card-img-top">
+					<img src="{% static 'abc.png' %}" style="width: 100%;">
+				</div>
+				<div class="card-body">
+					<h3 class="text-primary text-center">Elective course Name</h3>
+				</div>
+				<a class="stretched-link" href="/apply/1/"></a>
+				<div class="card-footer">
+					<p>Students Enrolled: {{ c1 }}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-6 col-lg-4 p-4">
+			<div class="card ">
+				<div class="card-img-top">
+					<img src="{% static 'abc.png' %}" style="width: 100%;">
+				</div>
+				<div class="card-body">
+					<h3 class="text-primary text-center">Elective course Name</h3>
+				</div>
+				<a class="stretched-link" href="/apply/2/"></a>
+				<div class="card-footer">
+					<p>Students Enrolled: {{ c2 }}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-6 col-lg-4 p-4">
+			<div class="card ">
+				<div class="card-img-top">
+					<img src="{% static 'abc.png' %}" style="width: 100%;">
+				</div>
+				<div class="card-body">
+					<h3 class="text-primary text-center">Elective course Name</h3>
+				</div>
+				<a class="stretched-link" href="/apply/3/"></a>
+				<div class="card-footer">
+					<p>Students Enrolled:  {{ c3 }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- web app -->
+<!--script src="{% static 'main.js' %}"></script-->
+
+{% endblock %}
